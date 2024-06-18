@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 namespace QuestionsCore{
 class QuestionManager{
-    List<Questoes> qt;
+    public static List<Questoes> qt = new List<Questoes>();
+    
+    //class contructor
     public QuestionManager(){
-        qt = new List<Questoes>();
     }
     public void AddQuestion(Questoes questao){
         qt.Add(questao);
         //Console.WriteLine("Adicionado com sucesso");
     }
-    public List<Questoes> getQuestions(){
+    public List<Questoes> GetQuestions(){
         //Console.WriteLine("Há um total de: " + qt.Count);
         return qt;
     }
@@ -17,7 +19,7 @@ class QuestionManager{
         try{
         Dictionary<string,string> question_Dict = new Dictionary<string, string>();
         index --;
-        question_Dict = qt[index].getAlternativas();
+        question_Dict = qt[index].getAlternativas(); //retorna um dicionario
         question_Dict["alternativa correta"] = qt[index].getAlternativaCorreta();
         question_Dict["enunciado"] = qt[index].enunciado;
 
@@ -31,8 +33,8 @@ class QuestionManager{
 
         return question_Dict;
         }catch(Exception e){
-            Console.WriteLine("Error: "+ e.Message);
-            return new Dictionary<string,string>();
+                Console.WriteLine("Error: " + e.ToString() + "\nDescription: " + e.Message.ToString());
+                return new Dictionary<string, string>();
         }
         
     }
