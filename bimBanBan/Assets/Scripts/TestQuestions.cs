@@ -18,10 +18,16 @@ public class TestQuestions : MonoBehaviour
         manager = new QuestionsCore.QuestionManager();
         CreateQuestion();
         DisplayQuestion(1);
-        a_btn.onClick.AddListener(delegate { BottonCheck(a_btn); });
-        b_btn.onClick.AddListener(delegate { BottonCheck(b_btn); });
-        c_btn.onClick.AddListener(delegate { BottonCheck(c_btn); });
-        d_btn.onClick.AddListener(delegate { BottonCheck(d_btn); });
+        //a_btn.onClick.AddListener(delegate { BottonCheck(a_btn); });
+        List<Button> buttons = new List<Button>{
+            a_btn,
+            b_btn,
+            c_btn,
+            d_btn
+        };
+        foreach(Button btn in buttons){
+            btn.onClick.AddListener(delegate { BottonCheck(btn); });
+        }
     }
     void Update()
 
