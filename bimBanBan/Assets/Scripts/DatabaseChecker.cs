@@ -13,9 +13,12 @@ public class DatabaseChecker : MonoBehaviour
     private TMP_InputField m_email;
     [SerializeField]
     private TMP_InputField m_password;
+    [SerializeField]
+    private GameObject sceneObjectGroup;
 
     public void ChecarCadastro()
     {
+        DestroyLoginObjects.DestroyLoginPage();
         StartCoroutine(ProcuraUsuarioNoBackEnd(URL));
     }
 
