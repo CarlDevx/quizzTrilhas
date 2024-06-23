@@ -15,22 +15,11 @@ public class TestQuestions : MonoBehaviour
     Button a_btn, b_btn, c_btn, d_btn;
     void Start()
     {
+        //instancia do gerenciador de questoes
         manager = new QuestionsCore.QuestionManager();
-        CreateQuestion("O que é cashback?", new Dictionary<string, string>{
-            ["A"] = "Um desconto na compra de produtos.",
-            ["B"] = "Um valor devolvido ao consumidor após uma compra.",
-            ["C"] = "Um tipo de imposto sobre vendas.",
-            ["D"] = "Um pagamento extra feito pelo vendedor."
-        }, "B");
-        CreateQuestion("O que é inflação?", new Dictionary<string, string>
-        {
-            ["A"] = "Aumento geral e contínuo dos preços.",
-            ["B"] = "Redução dos preços dos produtos.",
-            ["C"] = "Estagnação dos preços no mercado.",
-            ["D"] = "Crescimento econômico rápido."
-        }, "A");
-
+        SetupQuestions();
         DisplayQuestion(actualQuestionID);
+	//lista contendo os botoes da tela
         List<Button> buttons = new()
         {
             a_btn,
@@ -39,23 +28,55 @@ public class TestQuestions : MonoBehaviour
             d_btn
         };
         foreach(Button btn in buttons){
-            btn.onClick.AddListener(delegate { BottonCheck(btn); });
+            btn.onClick.AddListener(delegate { BottonCheck(btn); }); //adicionando evento de click no btn
         }
     }
+
+    private void SetupQuestions()
+    {
+        CreateQuestion("O que é cashback?", new Dictionary<string, string>
+        {
+            { "A", "Um desconto na compra de produtos." },
+            { "B", "Um valor devolvido ao consumidor após uma compra" },
+            { "C", "Um tipo de imposto sobre vendas." },
+            { "D", "Um pagamento extra feito pelo vendedor." }
+        }, "B");
+        CreateQuestion("O que é inflação?", new Dictionary<string, string>
+        {
+            { "A", "Aumento geral e contínuo dos preços." },
+            { "B", "Redução dos preços dos produtos." },
+            { "C", "Estagnação dos preços no mercado." },
+            { "D", "Crescimento econômico rápido." }
+        }, "A");
+        CreateQuestion("O que é um empréstimo?", new Dictionary<string, string>
+        {
+            { "A", "Dinheiro doado pelo governo." },
+            { "B", "Dinheiro dado a fundo perdido." },
+            { "C", "Dinheiro cedido temporariamente, com promessa de devolução futura." },
+            { "D", "Uma forma de investimento direto." }
+        }, "C");
+        /*CreateQuestion("", new Dictionary<string, string>
+        {
+            { "A", "" },
+            { "B", "" },
+            { "C", "." },
+            { "D", "" }
+        }, "");*/
+
+    }
+
     void Update()
 
     {
         
     }
     void BottonCheck(Button btn) {
-        if (btn.CompareTag(manager.getQuestion(actualQuestionID)["alternativaCorreta"]))
-        {
-            print("true");
-        }
-        else
-        {
-            print("false");
-        }
+        if(manager.AnalyzeResponse(btn.tag,actualQuestionID)){
+	    print("acertou");
+	}else
+	{
+	    print("errou");
+	}
     }
 
     void CreateQuestion(string enunciado, Dictionary<string,string> a, string alternativaCorreta) {

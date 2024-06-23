@@ -15,7 +15,7 @@ namespace QuestionsCore
         this.alternativas = alternativas; //recebe a lista de dicionarios posta no construtor
         this.alternativaCorreta = alternativaCorreta; //recebe um caractere que corresponde a alternativa correta
     }
-    public Dictionary<string,string> getAlternativas() {
+    public Dictionary<string,string> GetAlternativas() {
         try{
         return alternativas;
         }catch(Exception error){
@@ -24,7 +24,7 @@ namespace QuestionsCore
             return errorMessage;
         }
     }
-    public string getAlternativaCorreta()
+    public string GetAlternativaCorreta()
     {
         return alternativaCorreta;
     }

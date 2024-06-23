@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.18039216, g: 0.44313726, b: 0.56078434, a: 0.07450981}
+  m_BackGroundColor: {r: 0.22745098, g: 0.5568628, b: 0.654902, a: 0.07450981}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -717,8 +717,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -864,8 +864,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -963,12 +963,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a22213d9ac1964f9425f2c00bfaa57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualQuestionID: 1
+  actualQuestionID: 3
   questionText: {fileID: 2121518767092743576}
   alt1: {fileID: 3180886439150330105}
-  alt2: {fileID: 2898270354179871817}
+  alt2: {fileID: 5747802739465116130}
   alt3: {fileID: 6024493797075747569}
-  alt4: {fileID: 5747802739465116130}
+  alt4: {fileID: 2898270354179871817}
   a_btn: {fileID: 8455337570213571091}
   b_btn: {fileID: 2250188318390994970}
   c_btn: {fileID: 2878451211732494057}
@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 5809091889806422072}
   - component: {fileID: 2250188318390994970}
   m_Layer: 5
-  m_Name: 'B:'
+  m_Name: B:Button
   m_TagString: B
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1102,7 +1102,7 @@ GameObject:
   - component: {fileID: 5982525014112864601}
   - component: {fileID: 8762455958511009416}
   m_Layer: 5
-  m_Name: 'D:'
+  m_Name: D:Button
   m_TagString: D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1155,8 +1155,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1352,8 +1352,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 8701998697669721673}
   - component: {fileID: 2878451211732494057}
   m_Layer: 5
-  m_Name: 'C:'
+  m_Name: C:Button
   m_TagString: C
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 3104710952851442347}
   - component: {fileID: 8455337570213571091}
   m_Layer: 5
-  m_Name: 'A:'
+  m_Name: A:Button
   m_TagString: A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1566,7 +1566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8173589197732002770}
   m_Layer: 0
-  m_Name: QuestionAlternatives
+  m_Name: QuestionAlternatives:GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
