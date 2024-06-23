@@ -20,7 +20,7 @@ class QuestionManager{
         Dictionary<string,string> question_Dict = new Dictionary<string, string>();
         index --;
         question_Dict = qt[index].getAlternativas(); //retorna um dicionario
-        question_Dict["alternativa correta"] = qt[index].getAlternativaCorreta();
+        question_Dict["alternativaCorreta"] = qt[index].getAlternativaCorreta();
         question_Dict["enunciado"] = qt[index].enunciado;
 
         /*Console.WriteLine("enunciado: " + question_Dict["enunciado"] + "\n" +

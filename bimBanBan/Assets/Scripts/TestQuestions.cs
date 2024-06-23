@@ -8,7 +8,7 @@ public class TestQuestions : MonoBehaviour
 {
     QuestionsCore.QuestionManager manager;
     [SerializeField]
-    string playerAnswer = "A";
+    short actualQuestionID = 1;
     [SerializeField]
     TMP_Text questionText, alt1, alt2, alt3, alt4;
     [SerializeField]
@@ -16,10 +16,23 @@ public class TestQuestions : MonoBehaviour
     void Start()
     {
         manager = new QuestionsCore.QuestionManager();
-        CreateQuestion();
-        DisplayQuestion(1);
-        //a_btn.onClick.AddListener(delegate { BottonCheck(a_btn); });
-        List<Button> buttons = new List<Button>{
+        CreateQuestion("O que é cashback?", new Dictionary<string, string>{
+            ["A"] = "Um desconto na compra de produtos.",
+            ["B"] = "Um valor devolvido ao consumidor após uma compra.",
+            ["C"] = "Um tipo de imposto sobre vendas.",
+            ["D"] = "Um pagamento extra feito pelo vendedor."
+        }, "B");
+        CreateQuestion("O que é inflação?", new Dictionary<string, string>
+        {
+            ["A"] = "Aumento geral e contínuo dos preços.",
+            ["B"] = "Redução dos preços dos produtos.",
+            ["C"] = "Estagnação dos preços no mercado.",
+            ["D"] = "Crescimento econômico rápido."
+        }, "A");
+
+        DisplayQuestion(actualQuestionID);
+        List<Button> buttons = new()
+        {
             a_btn,
             b_btn,
             c_btn,
@@ -34,28 +47,21 @@ public class TestQuestions : MonoBehaviour
     {
         
     }
-    //deixar a funcao buttonCheck dinamica, fazendo com q o botao seja passado como parametro, ao inves de passar por referencia
     void BottonCheck(Button btn) {
-        if (btn.CompareTag(playerAnswer))
+        if (btn.CompareTag(manager.getQuestion(actualQuestionID)["alternativaCorreta"]))
         {
             print("true");
         }
-        else { 
+        else
+        {
             print("false");
         }
     }
 
-    void CreateQuestion() {
-        //futuro array contendo perguntas
-        Dictionary<string, string> a = new Dictionary<string, string>
-        {
-            ["A"] = "Brazil",
-            ["B"] = "China",
-            ["C"] = "Canada",
-            ["D"] = "Bulgaria"
-        }; 
-        manager.AddQuestion(new QuestionsCore.Questoes("Pais conhecido por fazer meme com qualquer coisa.", a, "A"));
+    void CreateQuestion(string enunciado, Dictionary<string,string> a, string alternativaCorreta) {
+        manager.AddQuestion(new QuestionsCore.Questoes(enunciado, a, alternativaCorreta));
     }
+
     private void DisplayQuestion(short index)
     {
         var qt = manager.getQuestion(index);
