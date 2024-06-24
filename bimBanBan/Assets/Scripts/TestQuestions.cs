@@ -13,6 +13,8 @@ public class TestQuestions : MonoBehaviour
     TMP_Text questionText, alt1, alt2, alt3, alt4;
     [SerializeField]
     Button a_btn, b_btn, c_btn, d_btn;
+    [SerializeField]
+    GameObject questionImage, questionTitle, questionAlternatives;
     void Start()
     {
         //instancia do gerenciador de questoes
@@ -72,11 +74,23 @@ public class TestQuestions : MonoBehaviour
     }
     void BottonCheck(Button btn) {
         if(manager.AnalyzeResponse(btn.tag,actualQuestionID)){
-	    print("acertou");
+            actualQuestionID++;
+            DisplayNextQuestion();
 	}else
 	{
 	    print("errou");
 	}
+    }
+
+    private void DisplayNextQuestion()
+    {
+        questionTitle.SetActive(false);
+        questionImage.SetActive(false);
+        questionAlternatives.SetActive(false);
+        DisplayQuestion(actualQuestionID);
+        questionTitle.SetActive(true);
+        questionImage.SetActive(true);
+        questionAlternatives.SetActive(true);
     }
 
     void CreateQuestion(string enunciado, Dictionary<string,string> a, string alternativaCorreta) {

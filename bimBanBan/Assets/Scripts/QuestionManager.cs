@@ -16,14 +16,14 @@ class QuestionManager{
     }
     public Dictionary<string,string> getQuestion(int index){
         try{
-        Dictionary<string,string> question_Dict = new Dictionary<string, string>();
-        index --;
-        question_Dict = qt[index].GetAlternativas(); //retorna um dicionario
-        question_Dict["alternativaCorreta"] = qt[index].GetAlternativaCorreta();
-        question_Dict["enunciado"] = qt[index].enunciado;
-        return question_Dict;
+            Dictionary<string,string> question_Dict = new Dictionary<string, string>();
+            index --;
+            question_Dict = qt[index].GetAlternativas(); //retorna um dicionario
+            question_Dict["alternativaCorreta"] = qt[index].GetAlternativaCorreta();
+            question_Dict["enunciado"] = qt[index].enunciado;
+            return question_Dict;
         }catch(Exception e){
-                return new Dictionary<string, string>();
+            return new Dictionary<string, string>();
         }
         
     }

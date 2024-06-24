@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a22213d9ac1964f9425f2c00bfaa57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualQuestionID: 3
+  actualQuestionID: 1
   questionText: {fileID: 2121518767092743576}
   alt1: {fileID: 3180886439150330105}
   alt2: {fileID: 5747802739465116130}
@@ -973,6 +973,9 @@ MonoBehaviour:
   b_btn: {fileID: 2250188318390994970}
   c_btn: {fileID: 2878451211732494057}
   d_btn: {fileID: 8762455958511009416}
+  questionImage: {fileID: 6557611798789738739}
+  questionTitle: {fileID: 4457593596730003294}
+  questionAlternatives: {fileID: 7651364757372377615}
 --- !u!1 &4457593596730003294
 GameObject:
   m_ObjectHideFlags: 0
