@@ -1278,6 +1278,7 @@ GameObject:
   - component: {fileID: 1631235212}
   - component: {fileID: 1631235211}
   - component: {fileID: 1631235210}
+  - component: {fileID: 1631235213}
   m_Layer: 5
   m_Name: Logar:Button
   m_TagString: Untagged
@@ -1387,6 +1388,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631235208}
   m_CullTransparentMesh: 1
+--- !u!114 &1631235213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631235208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7139ac538075c649ac575f0183be457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_email: {fileID: 300089748}
+  m_password: {fileID: 381490447}
+  sceneObjectGroup: {fileID: 0}
 --- !u!1 &1801415796
 GameObject:
   m_ObjectHideFlags: 0

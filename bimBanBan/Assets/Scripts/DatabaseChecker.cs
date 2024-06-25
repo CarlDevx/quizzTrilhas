@@ -4,10 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DatabaseChecker : MonoBehaviour
 {
     private const string URL = "https://desafio-4-inova-maranhao.onrender.com/usuario/login";//Mudar para o link/endpoint correto do backend
+    private Button Loginbtn;
 
     [SerializeField]
     private TMP_InputField m_email;
@@ -16,9 +18,14 @@ public class DatabaseChecker : MonoBehaviour
     [SerializeField]
     private GameObject sceneObjectGroup;
 
+    private void Start()
+    {
+        Loginbtn = GetComponent<Button>();
+        Loginbtn.onClick.AddListener(delegate { ChecarCadastro(); });
+    }
     public void ChecarCadastro()
     {
-        DestroyLoginObjects.DestroyLoginPage();
+        //DestroyLoginObjects.DestroyLoginPage();
         StartCoroutine(ProcuraUsuarioNoBackEnd(URL));
     }
 
